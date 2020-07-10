@@ -1,0 +1,22 @@
+Scene_ID,ID,Group,Type,Character,Animation,Constraint,Effect,Main Value
+i-chapter-1-1,dialogue-chapter1-1,,TEXT,character-1,,,,這就是國中生活嗎
+i-chapter-1-1,dialogue-chapter1-2,,TEXT,character-1,,,,結果還是什麼都沒改變
+i-chapter-1-1,dialogue-chapter1-3,,PHONE,,,,,
+i-chapter-1-1,dialogue-chapter1-4,,SOUND,,,,,sound:school_ring_1
+i-chapter-1-1,dialogue-chapter1-5,,TEXT,character-3,,,,在大家離開前 最後一件事要宣布
+i-chapter-1-1,dialogue-chapter1-6,,TEXT,character-3,,,,班級內 需要設計 班費
+i-chapter-1-1,dialogue-chapter1-7,,TEXT,character-3,,,,班級內 需要設計 班費\n主要用於 日常班級開銷
+i-chapter-1-1,dialogue-chapter1-8,,TEXT,character-3,,,,還有兩個月後的 學園祭
+i-chapter-1-1,dialogue-chapter1-9,,TEXT,character-3,,,,再那之前 我們班級 需要先選出 班長才行
+i-chapter-1-1,dialogue-chapter1-10,,SOUND,,,,,sound:noise_1
+,dialogue-chapter1-11,,TEXT,character-1,,,,什麼! 要是能當上班長的話\n我在現實上<color=red>人氣</color> 也會有所提升吧
+,dialogue-chapter1-12,,TEXT,character-1,,,,交朋友甚麼的 也會比較容易
+,dialogue-chapter1-13,,CHOICE,,,,,
+,dialogue-chapter1-14,,,,,,,
+,dialogue-chapter1-15,,,"character-4,character-5",,,,"我們提名 寧寧, 功課好 人認真"
+,,,TEXT,,,,,
+,,,TEXT,,,,,"既然我被選上為班上, 那班費的事"
+,,,TEXT,,,,,根據學長姊的說法 就決定是每位同學500NTD\n請在明天放學前 交給我
+,,,TEXT,,,,,並由光蓮同學統一保管
+,,,TEXT,,,,,哀? 什麼
+,,,TEXT,,,,,你剛才不是很想對班級有所貢獻嗎\n來試試吧
