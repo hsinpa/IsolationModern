@@ -18,6 +18,9 @@ namespace Iso.Model {
             if (csvPathList == null) return;
 
             foreach (string csvPath in csvPathList) {
+
+                string csvText = FileUtility.GetFileText(csvPath);
+
                 CSVFile csvFile = new CSVFile(csvText);
 
                 int csvCount = csvFile.length;
