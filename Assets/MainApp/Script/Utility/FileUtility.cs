@@ -15,7 +15,7 @@ namespace Utility {
         public static FileInfo GetFileInfo(string fullpath) {
             try {
                 FileInfo fileInfo = new FileInfo();
-                string filename = fullpath.Substring(fullpath.LastIndexOf("/") + 1);
+                string filename = Path.GetFileName(fullpath);
                 string format = filename.Substring(filename.LastIndexOf(".") + 1);
 
                 fileInfo.name = filename;

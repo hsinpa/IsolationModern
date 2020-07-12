@@ -4,17 +4,23 @@ using UnityEngine;
 using System.IO;
 using Utility;
 using System.Threading.Tasks;
+using Iso.Model;
 
 public class ModelOrganizer
 {
 
     private System.Action ReadyCallback;
-
     private static string streamingAssetsPath;
     private static string persistentDataPath;
 
-    public async void Init(System.Action ReadyCallback) {
 
+    private DialogueModel _dialogueModel;
+    public DialogueModel dialogueModel => _dialogueModel;
+
+    private WorldModel _worldModel;
+    public WorldModel worldModel => _worldModel;
+
+    public async void Init(System.Action ReadyCallback) {
         this.ReadyCallback = ReadyCallback;
 
         streamingAssetsPath = Application.streamingAssetsPath;
@@ -23,11 +29,11 @@ public class ModelOrganizer
         await Task.Run(() =>
         {
             CopyStreamingsToApplication();
+            SetupModels();
         });
 
-
-        if (ReadyCallback != null)
-            ReadyCallback();
+        if (this.ReadyCallback != null)
+            this.ReadyCallback();
     }
 
     private void CopyStreamingsToApplication() {
@@ -51,7 +57,9 @@ public class ModelOrganizer
             if (fileInfo.format == "meta") continue;
 
             //Check Dest replication
-            if (File.Exists(destFilePath)) continue;
+            if (File.Exists(destFilePath)) {
+                File.Delete(destFilePath);                
+            }
 
             File.Copy(copyFilePaths[i], destFilePath);
 
@@ -59,5 +67,12 @@ public class ModelOrganizer
         }
     }
 
+    private void SetupModels() {
+        _worldModel = new WorldModel();
 
+        _dialogueModel = new DialogueModel(_worldModel);
+        _dialogueModel.ParseDialogueFromCSVPathList(ParameterFlag.GoogleSheetPath.Dialogue(persistentDataPath));
+
+
+    }
 }

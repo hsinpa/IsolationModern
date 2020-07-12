@@ -23,5 +23,7 @@ namespace Iso.Model
         public string effect;
 
         public string mainValue;
+
+        public bool isValid => !string.IsNullOrEmpty(_id);
     }
 }

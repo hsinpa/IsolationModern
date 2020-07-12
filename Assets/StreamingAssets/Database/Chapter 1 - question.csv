@@ -1,0 +1,4 @@
+Choice_ID,ID,Constraint,Effect,Main Value
+i-choice1-c1,i-1-title-c0,,,要參加選舉嗎
+i-choice1-c1,i-1-c1,,i-choice1-c1 = 1,時機差不多\n上吧 吶喊出來
+i-choice1-c1,i-1-c2,,i-choice1-c1 = 0,吾... 這份猶豫\n算了 我就是爛

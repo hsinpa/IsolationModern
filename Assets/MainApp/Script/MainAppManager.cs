@@ -20,7 +20,7 @@ public class MainAppManager : Singleton<MainAppManager>
 
 	private Observer[] observers = new Observer[0];
 
-	public ModelOrganizer models;
+	private ModelOrganizer models;
 
 	void Awake()
 	{
@@ -66,5 +66,11 @@ public class MainAppManager : Singleton<MainAppManager>
 		{
 			subject.addObserver(observer);
 		}
+	}
+
+	public T FindViewObject<T>(string object_path) {
+		Transform ctrlHolder = transform.Find("view/"+ object_path);
+
+		return ctrlHolder.GetComponent<T>();
 	}
 }
